@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import {
-  Cpu,
   UploadCloud,
   FileText,
   CheckCircle,
@@ -458,8 +457,7 @@ export default function Dashboard({ theme, activeTab, setActiveTab }) {
       {/* TAB 1: Ingest & Upload */}
       {activeTab === 'ingest' && (
         <div className="space-y-8 animate-fade-in">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="lg:col-span-2 space-y-8">
+          <div className="max-w-4xl mx-auto space-y-8">
               <div className="bg-white dark:bg-slate-900/60 backdrop-blur-md p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-lg dark:shadow-xl flex flex-col justify-between transition-colors duration-300">
                 <div>
                   <div className="flex items-center gap-3 mb-4">
@@ -606,58 +604,6 @@ export default function Dashboard({ theme, activeTab, setActiveTab }) {
                   </div>
                 )}
               </div>
-            </div>
-
-            <div className="space-y-8">
-              <div className="bg-white dark:bg-slate-900/60 backdrop-blur-md p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-lg dark:shadow-xl transition-colors duration-300">
-                <div className="flex items-center gap-3 mb-4">
-                  <Cpu className="text-orange-500 dark:text-orange-400" size={22} />
-                  <h2 className="text-lg font-bold text-slate-805 dark:text-slate-100 transition-colors duration-300">Engine Profile</h2>
-                </div>
-                <p className="text-slate-500 dark:text-slate-400 text-xs mb-6 leading-relaxed">
-                  Active parameters of the neural parsing configuration for metallurgical record processing.
-                </p>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center pb-3 border-b border-slate-100 dark:border-slate-800/60">
-                    <span className="text-xs text-slate-500 dark:text-slate-455 font-bold uppercase tracking-wider">Parsing Pipeline</span>
-                    <span className="px-2 py-1 bg-orange-50 dark:bg-orange-950/30 text-orange-600 dark:text-orange-400 rounded-lg text-xs font-mono font-bold">FORGE.IQ v3.2</span>
-                  </div>
-                  <div className="flex justify-between items-center pb-3 border-b border-slate-100 dark:border-slate-800/60">
-                    <span className="text-xs text-slate-500 dark:text-slate-455 font-bold uppercase tracking-wider">Neural Base Model</span>
-                    <span className="text-xs font-semibold text-slate-700 dark:text-slate-300">LayoutLMv3-Large</span>
-                  </div>
-                  <div className="flex justify-between items-center pb-3 border-b border-slate-100 dark:border-slate-800/60">
-                    <span className="text-xs text-slate-500 dark:text-slate-455 font-bold uppercase tracking-wider">OCR Engine</span>
-                    <span className="text-xs font-semibold text-slate-700 dark:text-slate-300">PaddleOCR ResNet50</span>
-                  </div>
-                  <div className="flex justify-between items-center pb-3 border-b border-slate-100 dark:border-slate-800/60">
-                    <span className="text-xs text-slate-500 dark:text-slate-455 font-bold uppercase tracking-wider">Target Accuracy</span>
-                    <span className="text-xs font-bold text-emerald-505">99.2% CRITICAL</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-xs text-slate-500 dark:text-slate-455 font-bold uppercase tracking-wider">Inference Speed</span>
-                    <span className="text-xs font-semibold text-slate-700 dark:text-slate-300">~1.24s / page</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white dark:bg-slate-900/60 backdrop-blur-md p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-lg dark:shadow-xl transition-colors duration-300">
-                <div className="flex items-center gap-3 mb-4">
-                  <FileText className="text-amber-500 dark:text-amber-400" size={22} />
-                  <h2 className="text-lg font-bold text-slate-855 dark:text-slate-100 transition-colors duration-300">Schema Targets</h2>
-                </div>
-                <p className="text-slate-500 dark:text-slate-400 text-xs mb-4 leading-relaxed">
-                  Extracted database fields verified against standard pouring record layouts.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {['Date', 'Heat No', 'Item Desc', 'Grade', 'Customer', 'Planned Wt', 'Pouring Seq', 'Pour Time', 'Temperature', 'Liquid Poured', 'Weight Diff', 'Remarks'].map((field) => (
-                    <span key={field} className="px-2.5 py-1 rounded-lg bg-slate-50 dark:bg-slate-950/60 border border-slate-100 dark:border-slate-800/60 text-slate-600 dark:text-slate-400 text-[10px] font-bold uppercase tracking-wider">
-                      {field}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       )}
