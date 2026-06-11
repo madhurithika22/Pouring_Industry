@@ -18,7 +18,7 @@ class Settings(BaseSettings):
     REDIS_URI: str = os.getenv("REDIS_URI", "redis://localhost:6379/0")
     
     class Config:
-        env_file = ".env"
+        env_file = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), ".env")
         case_sensitive = True
 
 settings = Settings()

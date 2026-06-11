@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://madhurithika22-pouring.hf.space/api/v1';
+const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://localhost:8000/api/v1'
+    : 'https://madhurithika22-pouring.hf.space/api/v1';
 
 export const documentApi = {
     uploadDocument: async (file) => {
